@@ -1,0 +1,5 @@
+<% if @essay.sources.any? %>
+  <% @essay.sources.each do |source| %>
+    <%=markdown(source.citation)%>
+  <% end %>
+<% end %>

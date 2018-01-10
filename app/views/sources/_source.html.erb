@@ -1,0 +1,4 @@
+<%= link_to essay_source_path(@essay, source), :class => "collection-item black-text", :target => "_blank" do %>
+ <p><i class="material-icons orange-text text-lighten-2 left">book</i>
+ <%= markdown(source.citation)%></p>
+<%end%>

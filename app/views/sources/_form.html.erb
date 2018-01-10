@@ -1,0 +1,17 @@
+<p><%= form_for ([@essay, @source]) do |f| %></p>
+
+  <p><%= f.label :title %></p>
+  <p><%= f.text_field :title %></p>
+
+  <p><%= f.label :citation %></p>
+  <p><%= f.text_field :citation %></p>
+
+  <p><%= f.label :notes %> </p>
+  <p><%= f.text_area :notes %></p>
+
+  <p><%= f.label "URL (if applicable):" %></p>
+  <p><%= f.text_field :url %></p>
+
+  <%= f.submit :class => "btn waves-effect orange lighten-2"%>
+
+<%end%>
