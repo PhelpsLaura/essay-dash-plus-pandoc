@@ -45,6 +45,6 @@ class ResearchCardsController < ApplicationController
 
   private
     def research_card_params
-      params.require(:research_card).permit(:body, :title)
+      params.require(:research_card).permit(:title, :body)
     end
 end
