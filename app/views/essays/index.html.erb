@@ -1,0 +1,88 @@
+<!-- Essay Index Carousel; Homepage -->
+
+<!--TODO:-->
+<!-- favicon -->
+<!-- add tab capability to markdown parser -->
+<!-- Backup, esp for local -->
+
+<!-- Ordering for sections?-->
+<!-- section status marker? (rough, cleaned, finished, etc?) -->
+
+<!-- place that tells you how many days you have till it's due, how many weeks, etc? -->
+<!-- System for logging time? -->
+<!-- Independent of Essays, place to put general resources? EX: notes on MLA, structure of a French essay, etc etc;
+Expandable Sidebar? -->
+
+
+<% @title="Essay Dashboard" %>
+
+<div id="index-wrapper" class="wrapper">
+
+  <h1 class="center">Your Essay Dashboard!</h1>
+
+  <%if @essays.any?%>
+
+    <div id="index-carousel" class="carousel">
+
+      <%@essays.each do |essay|%>
+
+        <div class="card carousel-item index-card">
+
+          <div class="card-image waves-effect waves-light">
+            <%= image_tag("chalk.jpg", :class => "activator") %>
+          </div> <!-- Card image -->
+
+          <div class="card-content">
+            <h3 class="card-title activator"> <%= essay.title %>
+              <i class="material-icons right">more_vert</i>
+            </h3>
+          </div> <!-- Card Content -->
+
+          <!-- Commented out because is this necessary?
+          <div class="card-action">
+
+          </div> -->
+
+          <div class="card-reveal">
+
+            <h3 class="card-title activator"> <%= essay.title %>
+              <i class="material-icons right">close</i>
+            </h3>
+
+            <p class="text-purple lighten-3">Due: <%= essay.due_date %></p>
+
+            <%unless essay.prompt.blank? %>
+              <h5>Prompt:</h5>
+              <p><%= markdown(essay.prompt) %></p>
+              </br></br>
+            <%end%>
+
+            <%unless essay.question.blank? %>
+              <h5>Thesis / Driving Question:</h5>
+              <p><%= markdown(essay.question) %></p>
+            <%end%>
+
+            <%= link_to "More", essay_path(essay),
+                :class => "btn waves-effect purple lighten-3 bottom" %>
+
+            <%= link_to "Delete", essay_path(essay), method: :delete,
+                data: {confirm: "Are you sure you want to delete this essay?"},
+                :class => "btn waves-effect purple lighten-3 bottom" %>
+
+          </div> <!-- Card Reveal -->
+
+        </div> <!-- Essay Card -->
+
+      <%end%> <!-- Essays.each do -->
+
+    </div> <!--Index Carousel -->
+
+  <%end%> <!-- if Essays.any? -->
+
+  <div class="clearfix"></div>
+
+</div> <!--Index Wrapper -->
+
+<script>
+    $('.carousel').carousel();
+</script>

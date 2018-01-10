@@ -1,0 +1,69 @@
+<% @title= @essay.title %>
+
+<h1 class="center"><%= @essay.title %></h1>
+<p class="center">Due: <%= @essay.due_date.strftime("%B %d, %Y") %></p>
+
+<div class="center-align">
+  <%= link_to "View", essay_sections_path(@essay), :class => "waves-effect waves-purple btn-flat modal-trigger center-align" %>
+  <a class="waves-effect waves-purple btn-flat modal-trigger" href="#prompt-modal">Prompt</a>
+</div>
+
+<% unless @essay.prompt.blank? %>
+  <!-- Hidden unless Prompt is clicked -->
+  <div id="prompt-modal" class="modal">
+    <div class="modal-content">
+      <h4>Prompt</h4>
+      <p><%= markdown(@essay.prompt) %></p>
+    </div> <!-- modal-content (hidden until above link is clicked)-->
+    <div class="modal-footer">
+      <%= link_to "Edit", edit_essay_path(@essay), :class => "waves-effect waves-light btn purple lighten-3"%>
+      <a class="waves-effect waves-light btn purple lighten-3 modal-trigger" href="">Close</a>
+    </div> <!-- modal-footer -->
+  </div> <!-- prompt-modal -->
+<%end%>
+
+
+
+<% unless @essay.question.blank? %>
+  <div class = "card horizontal">
+    <div class ="card-content">
+      <span class = "card-title">Thesis / Driving Question:</span>
+      <%= markdown(@essay.question) %>
+    </div> <!-- card-content -->
+  </div> <!-- card-title -->
+<%end%>
+
+
+<% if @essay.research_pods.any? %>
+  <div class="row">
+    <%= render @essay.research_pods %>
+  </div>
+<% end %>
+
+<% if @essay.sections.any? %>
+  <div class="section-outline">
+    <ul class="collapsible" data-collapsible="expandable">
+      <li>
+        <div class="collapsible-header">
+          <h4>Working Outline</h4>
+        </div> <!-- collapsible-header -->
+      </li>
+      <%= render @essay.sections %>
+    </ul>
+  </div> <!-- section-outline -->
+<% end %>
+
+<% if @essay.sources.any? %>
+  <div class="collection with-header">
+    <h5 class="collection-header">
+      <%= link_to "Works Cited and Readings", essay_sources_path(@essay), :class => "black-text" %>
+    </h5>
+    <%= render @essay.sources %>
+  </div>
+<%end%>
+
+<%= render "fixed_action_menu" %>
+
+<script>
+  $('.modal').modal();
+</script>

@@ -1,0 +1,32 @@
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large purple lighten-3">
+    <i class="large material-icons">assignment</i>
+  </a>
+  <ul>
+    <li>
+      <%= link_to edit_essay_path(@essay), :class => "btn-floating pink darken-2", :title => "Update Title, Due Date, Prompt, or Thesis" do %>
+        <i class="material-icons">edit</i>
+      <%end%>
+    </li>
+    <li>
+      <%= link_to new_essay_research_card_path(@essay), :class => "btn-floating blue lighten-2", :title => "Add Research Card" do %>
+        <i class="material-icons">grid_on</i>
+      <%end%>
+    </li>
+    <li>
+      <%= link_to new_essay_section_path(@essay), :class => "btn-floating lime", :title => "Add Section to Outline" do%>
+        <i class="material-icons">layers</i>
+      <%end%>
+    </li>
+    <li>
+      <%= link_to new_essay_source_path(@essay), :class => "btn-floating orange lighten-2", :title => "Add Source" do%>
+        <i class="material-icons">book</i>
+      <%end%>
+    </li>
+    <li>
+      <%= link_to essay_path(@essay), method: :delete, data: {confirm: "Are you sure you want to delete this essay?"}, :class => "btn-floating teal lighten-1", :title => "Delete Essay" do %>
+        <i class="material-icons">delete_sweep</i>
+      <%end%>
+    </li>
+  </ul>
+</div>
