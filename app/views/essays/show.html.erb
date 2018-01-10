@@ -24,11 +24,11 @@
 
 
 
-<% unless @essay.question.blank? %>
+<% unless @essay.thesis.blank? %>
   <div class = "card horizontal">
     <div class ="card-content">
-      <span class = "card-title">Thesis / Driving Question:</span>
-      <%= markdown(@essay.question) %>
+      <span class = "card-title">Thesis or Driving Question:</span>
+      <%= markdown(@essay.thesis) %>
     </div> <!-- card-content -->
   </div> <!-- card-title -->
 <%end%>

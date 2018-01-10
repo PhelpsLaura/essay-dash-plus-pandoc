@@ -57,9 +57,9 @@ Expandable Sidebar? -->
               </br></br>
             <%end%>
 
-            <%unless essay.question.blank? %>
+            <%unless essay.thesis.blank? %>
               <h5>Thesis / Driving Question:</h5>
-              <p><%= markdown(essay.question) %></p>
+              <p><%= markdown(essay.thesis) %></p>
             <%end%>
 
             <%= link_to "More", essay_path(essay),

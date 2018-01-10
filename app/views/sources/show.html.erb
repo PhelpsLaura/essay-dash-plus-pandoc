@@ -2,7 +2,6 @@
 
 
 <h1 class="center"><%= @source.title %></h1>
-<p class="center"><i><%= @source.description %></i></p>
 
 </br></br>
 <h5>Notes: </h5>
@@ -12,7 +11,7 @@
 <p><%= markdown(@source.citation) %></p>
 </br>
 
-<p><%= link_to "More at...", @source.link, :target => "blank" %></p>
+<p><%= link_to "More at...", @source.url, :target => "blank" %></p>
 
 </br></br>
 
