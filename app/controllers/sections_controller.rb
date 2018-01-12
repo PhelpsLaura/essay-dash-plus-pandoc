@@ -30,7 +30,7 @@ class SectionsController < ApplicationController
       @section = @essay.sections.find(params[:id])
     end
 
-    def edit_cleanest
+    def edit_final
       @essay = Essay.find(params[:essay_id])
       @section = @essay.sections.find(params[:id])
     end
