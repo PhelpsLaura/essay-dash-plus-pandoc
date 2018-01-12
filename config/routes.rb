@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :sources
   end
 
-  get '/essays/:essay_id/sections/draft_edit/:id', to: 'sections#edit_final', as: 'edit_final_essay_section'
+  get '/essays/:essay_id/sections/:id/draft_edit', to: 'sections#edit_final', as: 'edit_final_essay_section'
+
   root "essays#index"
 end
