@@ -18,7 +18,7 @@ Expandable Sidebar? -->
 
 <div id="index-wrapper" class="wrapper">
 
-  <h1 class="center">Your Essay Dashboard!</h1>
+  <h1 class="center">Your Essay Dashboards:</h1>
 
   <%if @essays.any?%>
 
@@ -38,10 +38,10 @@ Expandable Sidebar? -->
             </h3>
           </div> <!-- Card Content -->
 
-          <!-- Commented out because is this necessary?
+
           <div class="card-action">
 
-          </div> -->
+          </div>
 
           <div class="card-reveal">
 
@@ -76,8 +76,9 @@ Expandable Sidebar? -->
       <%end%> <!-- Essays.each do -->
 
     </div> <!--Index Carousel -->
-
-  <%end%> <!-- if Essays.any? -->
+  <% else %>
+    <h3>To get started on your first essay, click <i>New Essay</i> below! Good luck writing!</h3>
+  <%end%> <!-- if else Essays.any? -->
 
   <div class="clearfix"></div>
 
