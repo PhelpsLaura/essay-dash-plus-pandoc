@@ -1,10 +1,10 @@
 <nav>
   <div class="nav-wrapper purple lighten-3">
     <ul class="left">
+      <li><%= link_to "Home", essays_path %></li>
       <% unless @essay.blank? || @title == "New Essay!" %>
         <li><%= link_to "Dashboard", essay_path(@essay) %></li>
       <% end %>
-      <li><%= link_to "Home", essays_path %></li>
       <li><%= link_to "New Essay!", new_essay_path %></li>
     </ul>
   </div>
