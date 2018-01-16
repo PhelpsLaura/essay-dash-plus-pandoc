@@ -3,7 +3,7 @@
 <h1 class="center"><%= @essay.title %></h1>
 <h2 class="center" style="font-family: Fredericka the Great"><%= @section.title %></h2>
 
-<div class="sec_outline">
+<div class="sec_outline hoverable">
   <p><%= markdown(@section.outline) unless @section.outline.blank? %></p>
 </div>
 
