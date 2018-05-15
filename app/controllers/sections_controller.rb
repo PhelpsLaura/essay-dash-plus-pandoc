@@ -2,7 +2,7 @@ class SectionsController < ApplicationController
 
     def index
       @essay = Essay.find(params[:essay_id])
-      @sections = @essay.sections.all
+      @sections = @essay.sections.order(order: :desc)
     end
 
     def show
@@ -55,6 +55,6 @@ class SectionsController < ApplicationController
 
     private
       def section_params
-        params.require(:section).permit(:title, :outline, :rough_drafting, :final_draft)
+        params.require(:section).permit(:title, :order, :outline, :rough_drafting, :final_draft)
       end
 end

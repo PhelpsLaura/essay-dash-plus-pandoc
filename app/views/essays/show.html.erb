@@ -48,7 +48,7 @@
           <h4>Working Outline</h4>
         </div> <!-- collapsible-header -->
       </li>
-      <%= render @essay.sections %>
+      <%= render @essay.sections.order(:order) %>
     </ul>
   </div> <!-- section-outline -->
 <% end %>
