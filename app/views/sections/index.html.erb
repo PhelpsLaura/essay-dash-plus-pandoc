@@ -4,7 +4,7 @@
   <h1><%= @essay.title %></h1>
 
   <% if @essay.sections.any? %>
-    <% @essay.sections.each do |section| %>
+    <% @essay.sections.order(:order).each do |section| %>
       <p><%= markdown(section.final_draft) unless section.final_draft.blank? %></p>
     <%end%>
   <%end%>
