@@ -33,10 +33,10 @@
   </div> <!-- card-title -->
 <%end%>
 
-
+<!--NOTE: for ordering oldest first!!!!-->
 <% if @essay.research_cards.any? %>
   <div class="row">
-    <%= render @essay.research_cards %>
+    <%= render @essay.research_cards.order(id: :asc) %>
   </div>
 <% end %>
 
