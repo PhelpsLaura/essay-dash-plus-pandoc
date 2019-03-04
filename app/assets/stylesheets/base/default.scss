@@ -1,0 +1,23 @@
+//Style scope: Entire Application
+
+//TODO: this is a hack plz do something better and figure out how to do it properly!
+body{
+  font-family: 'Mada';
+  font-weight: 700;
+}
+
+body, .bold{
+  font-weight: 400;
+}
+
+h1, .Fredericka{
+  font-family: 'Fredericka the Great';
+}
+
+.container{
+  margin-bottom: 10px;
+}
+
+.clearfix{
+  padding: 20px;
+}

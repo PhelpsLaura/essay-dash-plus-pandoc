@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<!-- TODO: fork + try to add PANDOC; perhaps build simple app first to see
+how pandoc-ruby works?  -->
+<html>
+  <head>
+    <title><%= @title %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <%= render 'layouts/navbar' %>
+
+</html>

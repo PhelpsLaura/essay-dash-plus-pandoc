@@ -1,0 +1,13 @@
+<nav>
+  <div class="nav-wrapper purple lighten-3">
+    <ul class="left">
+      <!-- at some point, perhaps try to make this prettier?-->
+      <li><%= link_to "Home", essays_path %></li>
+      <% unless @essay.blank? || @title == "New Essay!" %>
+        <li><%= link_to "Dashboard", essay_path(@essay) %></li>
+      <% end %>
+      <!-- on right of page? So it doesn't accidentally get clicked on. -->
+      <li><%= link_to "New Essay!", new_essay_path %></li>
+    </ul>
+  </div>
+</nav>

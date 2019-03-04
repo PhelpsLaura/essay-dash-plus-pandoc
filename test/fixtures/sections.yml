@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  outline: MyText
+  rough_drafting: MyText
+  final_draft: MyText
+  essay: one
+
+two:
+  title: MyString
+  outline: MyText
+  rough_drafting: MyText
+  final_draft: MyText
+  essay: two

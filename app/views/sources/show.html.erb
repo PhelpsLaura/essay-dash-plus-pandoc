@@ -1,0 +1,21 @@
+<% @title = @source.title %>
+
+
+<h1 class="center"><%= @source.title %></h1>
+
+</br></br>
+<h5>Notes: </h5>
+<p><%= markdown(@source.notes) %></p>
+
+</br></br>
+<p><%= markdown(@source.citation) %></p>
+</br>
+
+<p><%= link_to "More at...", @source.url, :target => "blank" %></p>
+
+</br></br>
+
+<p>
+<%= link_to "Edit", edit_essay_source_path(@essay, @source), :class => "btn orange lighten-2"%>
+<%= link_to "Delete", essay_source_path(@essay, @source), method: :delete, :class => "btn orange lighten-2", data: {confirm: "Are you sure you want to delete this source?"}%>
+</p>

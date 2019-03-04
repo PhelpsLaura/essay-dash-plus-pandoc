@@ -1,0 +1,20 @@
+<p><%= form_for ([@essay, @section]) do |f| %></p>
+
+  <p><%= f.label :title %></p>
+  <p><%= f.text_field :title %></p>
+
+  <p><%= f.label "Position: " %></p>
+  <p><%= f.number_field :order %></p>
+
+  <p><%= f.label :outline %></p>
+  <p><%= f.text_area :outline %></p>
+
+  <p><%= f.label "Drafting Space:" %></p>
+  <p><%= f.text_area :rough_drafting %></p>
+
+  <p><%= f.label "Final or Working Draft:" %></p>
+  <p><%= f.text_area :final_draft %></p>
+
+  <%= f.submit :class => "btn waves-effect lime white-text"%>
+
+<%end%>
