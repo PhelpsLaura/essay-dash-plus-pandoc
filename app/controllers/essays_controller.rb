@@ -41,6 +41,15 @@ class EssaysController < ApplicationController
     redirect_to essays_path
   end
 
+  def to_pdf
+    @essay = Essay.find(params[:id])
+    @sections = @essay.sections.order(order: :desc)
+    @pdf = helpers.convert_pdf(@sections)
+    send_file(@pdf, disposition: 'attatchment')
+    #File.delete(@pdf) if File.exist?(@pdf)
+    redirect_to essay_path(@essay)
+  end
+
   private
     def essay_params
       params.require(:essay).permit(:title, :due_date, :prompt, :thesis)

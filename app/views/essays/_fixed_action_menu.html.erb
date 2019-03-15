@@ -28,5 +28,10 @@
         <i class="material-icons">delete_sweep</i>
       <%end%>
     </li>
+    <li>
+      <%= link_to to_pdf_essay_path(@essay), :class => "btn-floating pink lighten-2", :title => "Download PDF" do%>
+        <i class ="material-icons">file_download</i>
+      <%end%>
+    </li>
   </ul>
 </div>

@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     resources :research_cards
     resources :sections
     resources :sources
+    member do
+      get 'to_pdf'
+    end
   end
 
   get '/essays/:essay_id/sections/:id/draft_edit', to: 'sections#edit_final', as: 'edit_final_essay_section'

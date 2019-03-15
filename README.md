@@ -10,9 +10,25 @@ This is yet another iteration of a web app I've written for myself to have an al
 
 * Using [PostgreSQL](https://www.postgresql.org/) as the database
 
-* Using [Redcarpet](https://github.com/vmg/redcarpet) gem for markdown parsing
+* Using [pandoc-ruby](https://github.com/alphabetum/pandoc-ruby) gem to compile external markdown into documents; requires installation of [Pandoc 2.0](http://pandoc.org/installing.html) for this to work.
+
+* Using [Redcarpet](https://github.com/vmg/redcarpet) gem for internal markdown parsing
 
 * Using [Materialize](http://materializecss.com/about.html) gem for aesthetics, bells, and whistles. (Materialize is my favorite thing.)
+
+#### Done:
+
+* Pandoc Ruby implemented; successfully writing .TeX
+
+#### ToDo:
+
+* How to get to PDF?
+
+* How to get a browser to download a file? Rn saving to assets directory
+
+* Finish full formatting so it's not just the body of the essay
+
+* Include other methods for Word Doc, etc
 
 <!-- * Currently deployed [here](http://www.laphelps.me) via [Heroku](https://heroku.com)! The functionality doesn't actually make sense for the internet, but I wanted to throw it up to show what I've been working on. -->
 

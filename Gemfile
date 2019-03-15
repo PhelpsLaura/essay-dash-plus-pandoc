@@ -35,6 +35,10 @@ gem 'materialize-sass'
 # Use redcarpet for markdown parsing
 gem 'redcarpet'
 
+# Use Pandoc to write files
+
+gem 'pandoc-ruby'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
