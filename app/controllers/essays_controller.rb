@@ -43,11 +43,38 @@ class EssaysController < ApplicationController
 
   def to_pdf
     @essay = Essay.find(params[:id])
-    @sections = @essay.sections.order(order: :desc)
-    @pdf = helpers.convert_pdf(@sections)
-    send_file(@pdf, disposition: 'attatchment')
+    #NOTE: why does order need to be ascending here, descending rendering?
+    @sections = @essay.sections.order(order: :asc)
+    @tex = helpers.convert_latex(@sections)
+    send_file(@tex, disposition: 'attatchment')
     #File.delete(@pdf) if File.exist?(@pdf)
-    redirect_to essay_path(@essay)
+    #redirect_to essay_path(@essay)
+  end
+
+  def to_md(download)
+    @essay = Essay.find(params[:id])
+    @sections = @essay.sections.order(order: :asc)
+    @md = helpers.write_md(@sections)
+    if download
+      send_file(@md, disposition: 'attatchment')
+    else
+      @md
+    end
+  end
+
+  def to_pdf
+    @essay = Essay.find(params[:id])
+    @md = to_md(false)
+    @output = "app/assets/files/test.pdf"
+    command = "pandoc " + @md + " -o " + @output
+    system(command)
+
+    File.delete(@md) if File.exist?(@md)
+    send_file @output, type: 'pdf', disposition: 'attatchment'
+
+    #NOTE: will not download if you redirect. idk why?
+    #NOTE: how to safely delete all generated files?
+    #redirect_to essay_path(@essay)
   end
 
   private

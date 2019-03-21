@@ -36,8 +36,9 @@ gem 'materialize-sass'
 gem 'redcarpet'
 
 # Use Pandoc to write files
-
 gem 'pandoc-ruby'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
