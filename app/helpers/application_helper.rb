@@ -21,7 +21,7 @@ module ApplicationHelper
 
 def convert_latex(sections)
     text = "Laura Phelps\n"
-    text = text + "\n#" + @essay.title + "\n"
+    text = text + "\n# " + @essay.title + "\n"
     sections.each do |section|
       text = text + "\n" + section.final_draft unless section.final_draft.blank?
     end
@@ -36,7 +36,7 @@ def convert_latex(sections)
 
   def write_md(sections)
     text = "Laura Phelps\n"
-    text = text + "#" + @essay.title + "\n"
+    text = text + "\n# " + @essay.title + "\n"
     sections.each do |section|
       text = text + "\n" + section.final_draft unless section.final_draft.blank?
     end

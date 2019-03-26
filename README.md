@@ -6,7 +6,7 @@ This is yet another iteration of a web app I've written for myself to have an al
 
 
 #### Tools used
-* Using Ruby 4.2.2, Rails 5.1.4
+* Ruby 2.5.3, Rails 5.2.2
 
 * Using [PostgreSQL](https://www.postgresql.org/) as the database
 
