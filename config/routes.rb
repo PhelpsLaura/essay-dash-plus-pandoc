@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :sources
     member do
       get 'to_pdf'
+      get 'to_md'
+      get 'to_word'
     end
   end
 

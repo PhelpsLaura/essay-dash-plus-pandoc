@@ -13,9 +13,8 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore any latex, pdf files
-*.tex
-*.pdf
+# Ignore any temp files
+/app/assets/files/*
 
 /node_modules
 /yarn-error.log

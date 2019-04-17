@@ -22,6 +22,11 @@
   </div> <!-- prompt-modal -->
 <%end%>
 
+<!-- Hidden unless download is clicked (in fixed action)-->
+<div id="download-modal" class="modal">
+  <%= render "download_menu" %>
+</div>
+
 
 
 <% unless @essay.thesis.blank? %>

@@ -41,22 +41,29 @@ class EssaysController < ApplicationController
     redirect_to essays_path
   end
 
-  def to_pdf
-    @essay = Essay.find(params[:id])
-    #NOTE: why does order need to be ascending here, descending rendering?
-    @sections = @essay.sections.order(order: :asc)
-    @tex = helpers.convert_latex(@sections)
-    send_file(@tex, disposition: 'attatchment')
-    #File.delete(@pdf) if File.exist?(@pdf)
-    #redirect_to essay_path(@essay)
+  # def to_tex
+  #   @essay = Essay.find(params[:id])
+  #   #NOTE: why does order need to be ascending here, descending rendering?
+  #   @sections = @essay.sections.order(order: :asc)
+  #   @tex = helpers.convert_latex(@sections)
+  #   send_file(@tex, disposition: 'attatchment')
+  #   #File.delete(@pdf) if File.exist?(@pdf)
+  #   #redirect_to essay_path(@essay)
+  # end
+
+  #EXTERNAL facing function to be called by user
+  def to_md
+    _to_md(true)
   end
 
-  def to_md(download)
+  #INTERNAL facing function for doing work of writing markdown; sending as download
+  # if passed from external facing function
+  def _to_md(download)
     @essay = Essay.find(params[:id])
     @sections = @essay.sections.order(order: :asc)
     @md = helpers.write_md(@sections)
     if download
-      send_file(@md, disposition: 'attatchment')
+      send_file(@md, type: 'md', disposition: 'attatchment')
     else
       @md
     end
@@ -64,7 +71,7 @@ class EssaysController < ApplicationController
 
   def to_pdf
     @essay = Essay.find(params[:id])
-    @md = to_md(false)
+    @md = _to_md(false)
     @output = "app/assets/files/test.pdf"
     command = "pandoc " + @md + " -o " + @output
     system(command)
@@ -75,6 +82,17 @@ class EssaysController < ApplicationController
     #NOTE: will not download if you redirect. idk why?
     #NOTE: how to safely delete all generated files?
     #redirect_to essay_path(@essay)
+  end
+
+  def to_word
+    @essay = Essay.find(params[:id])
+    @md = _to_md(false)
+    @output = "app/assets/files/draft.docx"
+    command = "pandoc " + @md + " -o " + @output
+    system(command)
+
+    File.delete(@md) if File.exist?(@md)
+    send_file @output, type: 'docx', disposition: 'attatchment'
   end
 
   private

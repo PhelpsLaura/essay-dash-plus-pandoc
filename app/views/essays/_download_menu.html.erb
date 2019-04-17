@@ -1,0 +1,10 @@
+<!-- Hidden unless Prompt is clicked -->
+
+<div class="download-content center">
+  <h4>Download As:</h4>
+  </br></br>
+    <%= link_to "PDF", to_pdf_essay_path(@essay), :class => "waves-effect waves-light btn pink lighten-2"%>
+    <%= link_to "Word Doc", to_word_essay_path(@essay), :class => "waves-effect waves-light btn pink lighten-2"%>
+    <%= link_to "Markdown", to_md_essay_path(@essay), :class => "waves-effect waves-light btn pink lighten-2"%>
+  </br></br>
+</div> <!-- modal-content (hidden until above link is clicked)-->
