@@ -18,17 +18,17 @@ This is yet another iteration of a web app I've written for myself to have an al
 
 #### Done:
 
-* Pandoc Ruby implemented; successfully writing .TeX
+* Building Word Doc, PDF, and MD!!!
 
-#### ToDo:
+#### TODO:
 
-* How to get to PDF?
+* Clean formatting
 
-* How to get a browser to download a file? Rn saving to assets directory
+* Individual File Names (new param? generate from title?)
 
-* Finish full formatting so it's not just the body of the essay
+* Finalize options for Downloads
 
-* Include other methods for Word Doc, etc
+* Clean anything else needs cleaning
 
 <!-- * Currently deployed [here](http://www.laphelps.me) via [Heroku](https://heroku.com)! The functionality doesn't actually make sense for the internet, but I wanted to throw it up to show what I've been working on. -->
 
