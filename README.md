@@ -2,7 +2,7 @@
 
 #### Essay Dashboard [pandoc]
 
-This is yet another iteration of a web app I've written for myself to have an alternative space to plan and write essays. It's very tuned to my writing style, so isn't the most elegant or useful for anyone operating outside of my brain. That being said, I'm proud of it. It's been very useful in keeping all of my essay notes in one place and helping me get writing. Basically a fork with pandoc
+This is yet another iteration of a web app I've written for myself to have an alternative space to plan and write essays. It's very tuned to my writing style, so isn't the most elegant or useful for anyone operating outside of my brain. That being said, it has been very useful in keeping all of my essay notes in one place and helping me in the writing process. Basically a fork of essay-dash, but with pandoc.
 
 
 #### Tools used
@@ -18,23 +18,17 @@ This is yet another iteration of a web app I've written for myself to have an al
 
 #### Done:
 
-* Building Word Doc, PDF, and MD!!!
+* Building Word Doc, PDF, and plain MD!!!
 
 #### TODO:
 
 * Clean formatting
 
-* consider: Only render sections with positive indices (allows for something like sections for initial proposal that doesn't translate to final draft?)
-
-
-
-* Footnotes! Give them their own shit!
+* Add footnotes to database
 
 * Individual File Names <!--(new param? generate from title?)-->
 
-* Finalize options for Downloads
-
-* Clean anything else needs cleaning
+* Finalize Download options
 
 
 
