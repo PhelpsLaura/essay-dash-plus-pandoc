@@ -61,7 +61,9 @@ class EssaysController < ApplicationController
   def _to_md(download)
     @essay = Essay.find(params[:id])
     @sections = @essay.sections.order(order: :asc)
-    @md = helpers.write_md(@sections)
+    @sources = Array.new
+    @sources = @essay.sources.sort_by{|work| work.citation} unless @essay.sources.empty?
+    @md = helpers.write_md(@sections, @sources)
     if download
       send_file(@md, type: 'md', disposition: 'attatchment')
     else

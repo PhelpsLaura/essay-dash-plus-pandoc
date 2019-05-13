@@ -34,11 +34,17 @@ module ApplicationHelper
 #   end
 
 
-  def write_md(sections)
+  def write_md(sections, sources)
     text = "Laura Phelps\n"
     text = text + "\n# " + @essay.title + "\n"
     sections.each do |section|
-      text = text + "\n" + section.final_draft unless section.final_draft.blank?
+      text = text + "\n" + section.final_draft + "\n" unless section.final_draft.blank?
+    end
+    if sources.any?
+      text += "\n### Works Cited\n"
+      sources.each do |source|
+        text = text + "\n" + source.citation + "\n"
+      end
     end
     path = "app/assets/files/test.md"
     File.open(path, "w+") do |f|

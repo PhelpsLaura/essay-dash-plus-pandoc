@@ -24,17 +24,22 @@ This is yet another iteration of a web app I've written for myself to have an al
 
 * Clean formatting
 
-* Individual File Names (new param? generate from title?)
+* consider: Only render sections with positive indices (allows for something like sections for initial proposal that doesn't translate to final draft?)
+
+
+
+* Footnotes! Give them their own shit!
+
+* Individual File Names <!--(new param? generate from title?)-->
 
 * Finalize options for Downloads
 
 * Clean anything else needs cleaning
 
-<!-- * Currently deployed [here](http://www.laphelps.me) via [Heroku](https://heroku.com)! The functionality doesn't actually make sense for the internet, but I wanted to throw it up to show what I've been working on. -->
 
 
 ##### More
 
-(If you want to see the *very far from complete* attempt that a friend and I made during a 12-hour hackathon to rebuild this idea from the ground up in a way that makes sense for a wider audience, check out [this repository](https://github.com/PhelpsLaura/essayOrganizer).)
+* If you want to see the *very far from complete* attempt that a friend and I made during a 12-hour hackathon to rebuild this idea from the ground up in a way that makes sense for a wider audience, check out [this repository](https://github.com/PhelpsLaura/essayOrganizer).
 
-(The repository for the original project (which I couldn't deploy as it's using SQLite) is over [here](https://github.com/PhelpsLaura/essay-prototype).)
+* The repository for the original project (without Pandoc) is over [here](https://github.com/PhelpsLaura/essay-dash).
