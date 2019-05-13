@@ -27,7 +27,7 @@ Expandable Sidebar? -->
 
     <div id="index-carousel" class="carousel">
 
-      <%@essays.each do |essay|%>
+      <%@essays.order('created_at DESC').each do |essay|%>
 
         <div class="card carousel-item index-card">
 
